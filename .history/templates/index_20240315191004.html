@@ -74,6 +74,10 @@
             margin-bottom: 30px;
         }
 
+        input[type="file"] {
+            display: none;
+        }
+
         .btn {
             display: inline-block;
             background-color: #4CAF50;
@@ -122,16 +126,46 @@
     <section class="hero">
         <h2>Welcome to ImageFixer</h2>
         <p>Fix and enhance your images with ease!</p>
-        
+        <input type="file" id="image-input" accept="image/*">
         <!-- <button class="btn" id="edit-btn">Start Services</button> -->
-        <a class="btn" href="/edit_image" >Start Services</a>
-        
+        <a class="btn" href="/edit_image" id="edit-btn">Start Services</a>
+        <div id="cropper-container"></div>
     </section>
     
     <footer>
         <p>&copy; 2024 ImageFixer. All rights reserved.</p>
     </footer>
 
-    
+    <!-- Cropper.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script>
+        document.getElementById('edit-btn').addEventListener('click', function() {
+            document.getElementById('image-input').click();
+        });
+
+        document.getElementById('image-input').addEventListener('change', function(event) {
+            var input = event.target;
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var image = document.createElement('img');
+                    image.src = e.target.result;
+                    image.id = 'cropper-image';
+                    document.getElementById('cropper-container').innerHTML = '';
+                    document.getElementById('cropper-container').appendChild(image);
+
+                    var cropper = new Cropper(image, {
+                        aspectRatio: 1,
+                        viewMode: 2,
+                        autoCropArea: 1
+                    });
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        });
+        document.getElementById('edit-btn').addEventListener('click', function() {
+            // window.location.href = "{% url 'edit_image' %}";
+        });
+    </script>
 </body>
 </html>

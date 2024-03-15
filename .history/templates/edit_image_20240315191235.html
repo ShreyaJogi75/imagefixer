@@ -6,16 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Image - ImageFixer</title>
     <!-- Add CSS and JavaScript libraries for image editing -->
-    <style>
-        
-        input[type="file"] {
-            display: none;
-        }
-
-    </style>
 </head>
 <body>
-    <input type="file" class="d-none" id="image-input" accept="image/*">
         <script>
             function applyChanges() {
                 // Get values from HTML controls (brightness, contrast, etc.)
@@ -33,8 +25,6 @@
     <input type="range" id="contrast" min="-100" max="100" value="0">
 <!-- Add buttons to apply changes, save image, etc. -->
     <button onclick="applyChanges()" class="btn" >Apply Changes</button>
-
-    <div id="cropper-container"></div>
     <!-- HTML content for image editing interface -->
     <h1>Edit Image</h1>
     <!-- Add controls for brightness, contrast, etc. -->

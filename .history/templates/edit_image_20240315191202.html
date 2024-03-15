@@ -1,0 +1,32 @@
+<!-- edit_image.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Image - ImageFixer</title>
+    <!-- Add CSS and JavaScript libraries for image editing -->
+</head>
+<body>
+        <script>
+            function applyChanges() {
+                // Get values from HTML controls (brightness, contrast, etc.)
+                var brightnessValue = document.getElementById('brightness').value;
+                var contrastValue = document.getElementById('contrast').value;
+        
+                // Apply changes to the image using CamanJS or other libraries
+                // Example: Caman('#image', function () {
+                //              this.brightness(brightnessValue).contrast(contrastValue).render();
+                //          });
+            }
+        </script>
+        <button onclick="applyChanges()" class="btn" id="edit-btn">Upload image</button>
+    <input type="range" id="brightness" min="-100" max="100" value="0">
+    <input type="range" id="contrast" min="-100" max="100" value="0">
+<!-- Add buttons to apply changes, save image, etc. -->
+    <button onclick="applyChanges()" class="btn" >Apply Changes</button>
+    <!-- HTML content for image editing interface -->
+    <h1>Edit Image</h1>
+    <!-- Add controls for brightness, contrast, etc. -->
+</body>
+</html>
