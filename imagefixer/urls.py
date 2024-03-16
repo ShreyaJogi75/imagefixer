@@ -25,4 +25,4 @@ urlpatterns = [
     path('edit_image/', edit_image, name='edit_image'),
     path('services/', views.services, name='services'),
 ]
-//testing
+
