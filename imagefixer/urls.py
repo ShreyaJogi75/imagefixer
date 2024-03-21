@@ -27,4 +27,8 @@ urlpatterns = [
      path('about/', views.about, name='about'),
      path('contact/', views.contact, name='contact'),
 ]
+<<<<<<< HEAD
 # testing
+=======
+
+>>>>>>> 340468f895123561a8d9af8f7b353936cd6e663f
