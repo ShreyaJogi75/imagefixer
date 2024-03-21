@@ -24,7 +24,5 @@ urlpatterns = [
     path('edit-image/', views.edit_image, name='edit_image'),
     path('edit_image/', edit_image, name='edit_image'),
     path('services/', views.services, name='services'),
-     path('about/', views.about, name='about'),
-     path('contact/', views.contact, name='contact'),
 ]
 # testing
