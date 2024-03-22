@@ -18,6 +18,7 @@ from django.urls import path
 from .views import home, upload_image
 from .views import edit_image
 from . import views
+from django.contrib import admin
 urlpatterns = [
     path('', views.home, name='home'),
     path('upload_image/', upload_image, name='upload_image'),
@@ -26,9 +27,6 @@ urlpatterns = [
     path('services/', views.services, name='services'),
      path('about/', views.about, name='about'),
      path('contact/', views.contact, name='contact'),
+     path('admin/', admin.site.urls),
 ]
-<<<<<<< HEAD
-# testing
-=======
 
->>>>>>> 340468f895123561a8d9af8f7b353936cd6e663f
